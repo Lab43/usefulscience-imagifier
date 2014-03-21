@@ -1,23 +1,51 @@
 body {
   margin: 0;
+  font-family: sans-serif;
+}
+
+img {
+  vertical-align: middle;
 }
 
 .page-wrap {
-  width: 750px;
+  width: 900px;
   margin: 0 auto;
 }
 
-#preview {
+#image {
   background: #000;
   color: #fff;
+  position: relative;
 }
 
-#preview img {
+.img {
   width: 100%;
   height: auto;
 }
 
+.caption {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
 .text {
-  padding: 40px;
-  font-size: 18px;
+  font-family: 'Chaparral Pro';
+  font-size: 30px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  text-align: right;
+  color: #999;
+}
+
+.org {
+  color: #666;
 }

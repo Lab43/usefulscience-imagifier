@@ -8,15 +8,17 @@ var express = require('express')
 // configure webshot
 var webshotOptions = {
   screenSize: {
-    width: 750,
+    width: 900,
     height: 100
   },
   shotSize: {
-    width: 750,
+    width: 900,
     height: 'all'
   },
   siteType:'html',
-  streamType: 'jpg'
+  streamType: 'jpg',
+  userAgent: 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.75 Safari/535.7',
+  customHeaders: { Referer: 'http://imagifier.usefulscience.org' }
 }
 
 
