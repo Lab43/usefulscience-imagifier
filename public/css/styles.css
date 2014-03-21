@@ -8,30 +8,93 @@ For local testing, you will probably need to install the exact font files found 
 
 */
 
+
+
+/*  =======
+    HELPERS
+    =======  */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.clearfix:after {
+    clear: both;
+}
+
+
+
+/*  ======
+    LAYOUT
+    ======  */
+
 body {
   margin: 0;
   font-family: 'Futura Std', 'futura-pt', sans-serif;
 }
 
-img {
-  vertical-align: middle;
-}
-
-[data-cat='creativity']   { color: #E54B4B; }
-[data-cat='education']    { color: #E5C64B; }
-[data-cat='fitness']      { color: #887FAA; }
-[data-cat='happiness']    { color: #4178C6; }
-[data-cat='health']       { color: #EB7B98; }
-[data-cat='nutrition']    { color: #82c440; }
-[data-cat='parenting']    { color: #84AEDF; }
-[data-cat='persuasion']   { color: #E5894B; }
-[data-cat='productivity'] { color: #41C6BC; }
-[data-cat='sleep']        { color: #9A41C6; }
-
 .page-wrap {
-  width: 900px;
+  width: 1200px;
+  padding: 40px;
   margin: 0 auto;
 }
+.left {
+  float: left;
+  width: 250px;
+}
+.right {
+  float: right;
+  width: 900px;
+}
+
+
+/*  ====
+    FORM
+    ====  */
+
+fieldset {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  padding-top: 10px;
+}
+
+input, textarea, select {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+}
+
+button {
+  margin: 0;
+}
+
+#imagify {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
+  background: #333;
+  border: none;
+  color: #fff;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: 'futura-pt' serif;
+  cursor: pointer;
+  margin-top: 20px;
+}
+#imagify:hover {
+  background: #000;
+}
+
+
+
+/*  =================
+    IMAGE AND CAPTION
+    =================  */
 
 #image {
   background: #000;
@@ -42,6 +105,7 @@ img {
 .img {
   width: 100%;
   height: auto;
+  vertical-align: middle;
 }
 
 .caption {
@@ -51,14 +115,6 @@ img {
   right: 0;
   background: rgba(0, 0, 0, 0.7);
   line-height: 1.4;
-}
-
-[data-pos='top'] {
-  top: 0;
-}
-
-[data-pos='bottom'] {
-  bottom: 0;
 }
 
 .text {
@@ -72,9 +128,49 @@ img {
   white-space: nowrap;
   display: block;
   position: relative;
-  top: 10px;
+  top: 8px;
   font-size: 24px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   text-align: right;
 }
+
+.stripe {
+  height: 6px;
+  background: url(/img/stripe.png);
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+[data-cat='creativity']   { color: #E54B4B; }
+[data-cat='education']    { color: #E5C64B; }
+[data-cat='fitness']      { color: #887FAA; }
+[data-cat='happiness']    { color: #4178C6; }
+[data-cat='health']       { color: #EB7B98; }
+[data-cat='nutrition']    { color: #82c440; }
+[data-cat='parenting']    { color: #84AEDF; }
+[data-cat='persuasion']   { color: #E5894B; }
+[data-cat='productivity'] { color: #41C6BC; }
+[data-cat='sleep']        { color: #9A41C6; }
+
+[data-pos='top'] #image {
+  padding-bottom: 6px;
+}
+[data-pos='top'] .stripe {
+  bottom: 0;
+}
+[data-pos='top'] .caption {
+  top: 0;
+}
+
+[data-pos='bottom'] #image {
+  padding-top: 6px;
+}
+[data-pos='bottom'] .stripe {
+  top: 0;
+}
+[data-pos='bottom'] .caption {
+  bottom: 0;
+}
+

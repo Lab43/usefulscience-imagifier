@@ -1,5 +1,6 @@
-#image
+#image(data-pos= pos || 'bottom')
   img(src= img || 'img/placeholder.jpg').img
-  .caption(data-pos= pos || 'bottom')
+  .caption.clearfix
     span.text= text || 'Post Text.'
     span(data-cat= cat || 'creativity').logo Useful Science .org
+  .stripe
