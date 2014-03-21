@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+}
+
+.page-wrap {
+  width: 750px;
+  margin: 0 auto;
+}
+
+#preview {
+  background: #000;
+  color: #fff;
+}
+
+#preview img {
+  width: 100%;
+  height: auto;
+}
+
+.text {
+  padding: 40px;
+  font-size: 18px;
+}

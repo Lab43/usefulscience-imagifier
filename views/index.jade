@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title Image
+    base(href!=baseUrl)
+    link(rel='stylesheet', href='css/styles.css')
+  body
+    .page-wrap
+      h1 Useful Science Imagifier
+
+      h2 Options
+      form(action='/image.jpg', method='get')
+        fieldset
+          label(for='img') Image URL
+          input(type='url', name='img')#img
+          button(name='update_img')#update_img Update
+        fieldset
+          label(for='text') Post Text
+          textarea(name='text', rows='4', cols='50')#text
+          button(name='update_text')#update_text Update
+        button(type='submit') Imagify!
+
+      h2 Preview
+      #preview
+        img(src='img/placeholder.jpg')
+        .text
+          .post= text
+            .logo Useful Science
+
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js')
+    script(src='js/scripts.js')
