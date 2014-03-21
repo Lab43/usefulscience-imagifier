@@ -6,16 +6,43 @@ block body
     h1 Useful Science Imagifier
 
     h2 Options
-    form(action='/image.jpg', method='get')
+
+    form(action='/image.jpg', method='get', target='_blank')
+
       fieldset
         label(for='img') Image URL
         input(type='url', name='img')#img
-        button(name='update_img')#update_img Update
+        button#update_img Update
+
       fieldset
         label(for='text') Post Text
         textarea(name='text', rows='4', cols='50')#text
-        button(name='update_text')#update_text Update
+        button#update_text Update
+
+      fieldset
+        label(for='cat') Logo Category Color
+        select(name='cat')#cat
+          option(value='creativity', selected) Creativity (red)
+          option(value='education') Education (yellow)
+          option(value='fitness') Fitness (light purple)
+          option(value='happiness') Happiness (blue)
+          option(value='health') Health (pink)
+          option(value='nutrition') Nutrition (green)
+          option(value='parenting') Parenting (light blue)
+          option(value='persuasion') Persuasion (orange)
+          option(value='productivity') Productivity (teal)
+          option(value='sleep') Sleep (purple)
+        button#update_cat Update
+
+      fieldset
+        label(for='pos') Caption Position
+        select(name='pos')#pos
+          option(value='top') Top
+          option(value='bottom', selected) Bottom
+        button#update_pos Update
+
       button(type='submit') Imagify!
+
 
     h2 Preview
 

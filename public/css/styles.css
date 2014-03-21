@@ -4,6 +4,8 @@ A note about fonts:
 
 The web interface (where users add an image and text) uses TypeKit to serve fonts. However, Phantomjs is not able to load TypeKit fonts. To get around this limitation, the fonts are installed on the server so that Phantomjs can access them directly. This is done on Heroku by adding the fonts to the ./fonts directory. The font-family declarations below are written such that the browser will look for system fonts first, then use TypeKit fonts when the system fonts aren't available.
 
+For local testing, you will probably need to install the exact font files found in ./fonts, or else the names may won't match.
+
 */
 
 body {
@@ -15,6 +17,17 @@ img {
   vertical-align: middle;
 }
 
+[data-cat='creativity']   { color: #E54B4B; }
+[data-cat='education']    { color: #E5C64B; }
+[data-cat='fitness']      { color: #887FAA; }
+[data-cat='happiness']    { color: #4178C6; }
+[data-cat='health']       { color: #EB7B98; }
+[data-cat='nutrition']    { color: #82c440; }
+[data-cat='parenting']    { color: #84AEDF; }
+[data-cat='persuasion']   { color: #E5894B; }
+[data-cat='productivity'] { color: #41C6BC; }
+[data-cat='sleep']        { color: #9A41C6; }
+
 .page-wrap {
   width: 900px;
   margin: 0 auto;
@@ -22,7 +35,7 @@ img {
 
 #image {
   background: #000;
-  color: #fff;
+  color: #f3f3f3;
   position: relative;
 }
 
@@ -32,28 +45,36 @@ img {
 }
 
 .caption {
-  padding: 20px;
+  padding: 18px 28px 20px;
   position: absolute;
-  bottom: 0;
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.7);
+  line-height: 1.4;
+}
+
+[data-pos='top'] {
+  top: 0;
+}
+
+[data-pos='bottom'] {
+  bottom: 0;
 }
 
 .text {
-  font-family: 'Chaparral Pro', 'ChaparralPro-Regular', 'chaparral-pro', serif;
-  font-size: 30px;
+  font-family: 'ChaparralPro-Regular', 'chaparral-pro', serif;
+  font-size: 28px;
 }
 
 .logo {
   font-weight: bold;
-  font-size: 30px;
+  float: right;
+  white-space: nowrap;
+  display: block;
+  position: relative;
+  top: 10px;
+  font-size: 24px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   text-align: right;
-  color: #999;
-}
-
-.org {
-  color: #666;
 }

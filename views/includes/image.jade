@@ -1,8 +1,5 @@
 #image
   img(src= img || 'img/placeholder.jpg').img
-  .caption
-    .text= text || 'Post Text.'
-    .logo
-      i.icon-truck &nbsp;
-      | Useful Science
-      span.org &nbsp;.org
+  .caption(data-pos= pos || 'bottom')
+    span.text= text || 'Post Text.'
+    span(data-cat= cat || 'creativity').logo Useful Science .org
