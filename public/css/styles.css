@@ -98,7 +98,6 @@ button {
 
 #image {
   background: #000;
-  color: #f3f3f3;
   position: relative;
 }
 
@@ -113,7 +112,6 @@ button {
   position: absolute;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7);
   line-height: 1.4;
 }
 
@@ -141,6 +139,13 @@ button {
   position: absolute;
   right: 0;
   left: 0;
+}
+
+[data-color='white'] {
+  color: #f3f3f3;
+}
+[data-color='black'] {
+  color: #222;
 }
 
 [data-cat='creativity']   { color: #E54B4B; }
@@ -172,5 +177,9 @@ button {
 }
 [data-pos='bottom'] .caption {
   bottom: 0;
+}
+
+[data-back='black'] .caption {
+  background: rgba(0, 0, 0, 0.7);
 }
 

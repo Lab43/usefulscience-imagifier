@@ -1,4 +1,8 @@
-#image(data-pos= pos || 'bottom')
+#image(
+    data-pos= pos || 'bottom',
+    data-back= back || 'black',
+    data-color= color || 'white'
+  )
   img(src= img || 'img/placeholder.jpg').img
   .caption.clearfix
     span.text= text || 'Post Text.'

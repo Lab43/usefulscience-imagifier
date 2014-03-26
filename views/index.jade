@@ -21,6 +21,13 @@ block body
           button#update_text Update
 
         fieldset
+          label(for='color') Post Text Color
+          select(name='color')#color
+            option(value='black') Black
+            option(value='white', selected) White
+          button#update_color Update
+
+        fieldset
           label(for='cat') Logo Category Color
           select(name='cat')#cat
             option(value='creativity', selected) Creativity (red)
@@ -41,6 +48,13 @@ block body
             option(value='top') Top
             option(value='bottom', selected) Bottom
           button#update_pos Update
+
+        fieldset
+          label(for='back') Caption Background Color
+          select(name='back')#back
+            option(value='black', selected) Black
+            option(value='none') None
+          button#update_back Update
 
         button(type='submit')#imagify Imagify!
 
