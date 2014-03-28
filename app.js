@@ -2,6 +2,7 @@
 var express = require('express')
   , app = express()
   , webshot = require('webshot')
+  , fs = require('fs');
 ;
 
 
@@ -16,9 +17,7 @@ var webshotOptions = {
     height: 'all'
   },
   siteType:'html',
-  streamType: 'jpg',
-  userAgent: 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.75 Safari/535.7',
-  customHeaders: { Referer: 'http://imagifier.usefulscience.org' }
+  quality: 90
 }
 
 
@@ -55,13 +54,21 @@ app.get('/image.jpg', function (req, res, next) {
   res.render('image', req.query, function (err, html) {
     if (err) return next(err);
 
-    // convert html to jpg
-    webshot(html, webshotOptions, function (err, pngStream) {
+    // save jpg to disk
+    webshot(html, 'image.jpg', webshotOptions, function(err) {
       if (err) return next(err);
 
-      // send it
-      res.setHeader('content-type', 'image/jpeg');
-      pngStream.pipe(res);
+      // stream jpg to user
+      var png = fs.createReadStream('image.jpg');
+      png
+        .on('open', function () {
+          res.setHeader('content-type', 'image/jpg');
+          png.pipe(res);
+        })
+        .on('error', function () {
+          next(err);
+        })
+      ;
 
     });
   });
